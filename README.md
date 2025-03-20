@@ -12,7 +12,7 @@ java -jar build\libs\JavaFinAccounting-1.0-SNAPSHOT.jar
 ## Available commands
 ```create account [name] [balance]``` - creates new account
 
-```create category [type] [name]``` - creates new category (type: income (i) /expense (e))
+```create category [type] [name]``` - creates new category (type: income (i) /expenses (e))
 
 ```create operation [type] [amount] [date] [bankAccountId] [categoryId] [description]``` - creates new operation
 (type: income (i) /expense (e)), description is optional
