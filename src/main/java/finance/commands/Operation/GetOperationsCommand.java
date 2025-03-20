@@ -12,6 +12,9 @@ public class GetOperationsCommand implements ICommand {
 
     @Override
     public void execute() {
-        financeFacade.getAllOperations().forEach(System.out::println);
+        financeFacade.getAllOperations().forEach(operation -> {
+            System.out.println();
+            System.out.println(operation);
+        });
     }
 }

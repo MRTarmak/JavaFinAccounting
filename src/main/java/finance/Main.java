@@ -26,6 +26,7 @@ public class Main {
             try {
                 ICommand command = parser.parse(input);
                 executor.executeCommand(command);
+                System.out.println();
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }

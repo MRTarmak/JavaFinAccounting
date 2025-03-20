@@ -1,23 +1,31 @@
 package finance.domains;
 
+import finance.interfaces.IExportVisitor;
+import finance.interfaces.IExportable;
 import lombok.Getter;
 
 import java.time.LocalDate;
 
-public class Operation {
+public class Operation implements IExportable {
     @Getter
     private int id;
 
+    @Getter
     private int type;
 
+    @Getter
     private double amount;
 
+    @Getter
     private LocalDate date;
 
+    @Getter
     private int bankAccountId;
 
+    @Getter
     private int categoryId;
 
+    @Getter
     private String description;
 
     private Operation(OperationBuilder builder) {
@@ -80,6 +88,12 @@ public class Operation {
         }
     }
 
+    @Override
+    public void accept(IExportVisitor visitor, String fileName, boolean append) {
+        visitor.visit(this, fileName, append);
+    }
+
+    @Override
     public String toString() {
         return "Operation " + id +
                 "\ntype: " + (type == 0 ? "Income" : "Expenses") +

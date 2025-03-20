@@ -12,6 +12,9 @@ public class GetAccountsCommand implements ICommand {
 
     @Override
     public void execute() {
-        financeFacade.getAllBankAccounts().forEach(System.out::println);
+        financeFacade.getAllBankAccounts().forEach(account -> {
+            System.out.println();
+            System.out.println(account);
+        });
     }
 }

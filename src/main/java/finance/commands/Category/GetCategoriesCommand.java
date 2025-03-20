@@ -12,6 +12,9 @@ public class GetCategoriesCommand implements ICommand {
 
     @Override
     public void execute() {
-        financeFacade.getAllCategories().forEach(System.out::println);
+        financeFacade.getAllCategories().forEach(category -> {
+            System.out.println();
+            System.out.println(category);
+        });
     }
 }
